@@ -5,4 +5,6 @@ public class Sonkodi_Cozma_Cristian_Lab2Context(DbContextOptions<Sonkodi_Cozma_C
     public DbSet<Sonkodi_Cozma_Cristian_Lab2.Models.Book> Book { get; set; } = default!;
     public DbSet<Sonkodi_Cozma_Cristian_Lab2.Models.Publisher> Publisher { get; set; } = default!;
     public DbSet<Sonkodi_Cozma_Cristian_Lab2.Models.Author> Author { get; set; } = default!;
+    public DbSet<Sonkodi_Cozma_Cristian_Lab2.Models.Category> Category { get; set; } = default!;
+    public DbSet<Sonkodi_Cozma_Cristian_Lab2.Models.BookCategory> BookCategory { get; set; } = default!;
 }
