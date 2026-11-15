@@ -7,23 +7,27 @@ namespace Sonkodi_Cozma_Cristian_Lab2.Models
     {
         public int ID { get; set; }
 
+        // Sarcina 2: titlu obligatoriu, intre 3 si 150 de caractere
         [Display(Name = "Book Title")]
+        [Required(ErrorMessage = "Titlul cartii este obligatoriu")]
+        [StringLength(150, MinimumLength = 3, ErrorMessage = "Titlul trebuie sa aiba intre 3 si 150 de caractere")]
         public string Title { get; set; }
 
-
         [Column(TypeName = "decimal(6, 2)")]
+        [Range(0.01, 500)]
         public decimal Price { get; set; }
 
         [DataType(DataType.Date)]
         public DateTime PublishingDate { get; set; }
 
-        public int? PublisherID { get; set; }
-
         public int? AuthorID { get; set; }
-        public Author? Author { get; set; } // navigation property
-        public Publisher? Publisher { get; set; } // navigation property
+        public Author? Author { get; set; }
+
+        public int? PublisherID { get; set; }
+        public Publisher? Publisher { get; set; }
+
+        public ICollection<Borrowing>? Borrowings { get; set; }
 
         public ICollection<BookCategory>? BookCategories { get; set; }
-        public ICollection<Borrowing>? Borrowings { get; set; }
     }
 }
